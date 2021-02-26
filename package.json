@@ -1,0 +1,28 @@
+{
+  "name": "jamieghoorbin-portfolio",
+  "version": "1.0.0",
+  "description": "my react portfolio website.",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "start": "webpack serve",
+    "watch": "webpack --watch",
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jdg23-dev/jamieghoorbin-portfolio.git"
+  },
+  "author": "Jamie Ghoorbin",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jdg23-dev/jamieghoorbin-portfolio/issues"
+  },
+  "homepage": "https://github.com/jdg23-dev/jamieghoorbin-portfolio#readme",
+  "devDependencies": {
+    "webpack": "^5.24.2",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
