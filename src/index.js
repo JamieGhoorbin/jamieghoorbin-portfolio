@@ -1,3 +1,5 @@
+import "./styles/index.scss";
+
 const testJamie = {
     name: "Jamie",
     location: "london",
