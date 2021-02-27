@@ -32,6 +32,16 @@ Environmental variables for your project. Preferably in a table format.
 
 Instructions on how to run your application.
 
+### Netlify Continuous Integration
+
+Built into this project is the ability to run the following tests as part of a continuous integration process:
+
+1. [xxx](url) (Brief explanation).
+2. [xxx](url) (Brief explanation).
+3. [xxx](url) (Brief explanation).
+
+Meaning before code is pushed to Netlify, the above checks will be run. Netlify will then build the project and replace the existing deployment, providing no errors. The exisiting version will remain should any errors occur.
+
 ### Contributing:
 
 Instructions on how you'd like the team to contribute. Here's an example:
