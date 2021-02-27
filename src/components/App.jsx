@@ -7,7 +7,7 @@ const App = () => {
       <section className='hero'>
         <main>
           <section>
-            <h1>gggggggggggfd app.jsx</h1>
+            <h1>Live load in react?</h1>
           </section>
         </main>
         <SomeData />
