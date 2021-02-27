@@ -1,4 +1,7 @@
+const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 let mode = "development";
 let target = "web"; // default. Fixes issues with Webpack 5
@@ -13,6 +16,8 @@ module.exports = {
     
     // output images etc. into a folder for dist.
     output: {
+        // what path to clean
+        path: path.resolve(__dirname, "dist"),
         assetModuleFilename: "images/[hash][ext][query]",
     },
    
@@ -53,8 +58,12 @@ module.exports = {
         ],
     },
 
-    plugins: [ 
-        new MiniCssExtractPlugin()
+    plugins: [
+        new CleanWebpackPlugin(),
+        new MiniCssExtractPlugin(),
+        new HtmlWebpackPlugin({
+            template: "./src/index.html",
+        }),
     ],
 
     target: target,
