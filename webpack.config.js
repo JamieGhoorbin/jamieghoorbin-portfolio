@@ -10,23 +10,45 @@ if (process.env.NODE_ENV === "production") {
 
 module.exports = {
     mode: mode,
+    
+    // output images etc. into a folder for dist.
+    output: {
+        assetModuleFilename: "images/[hash][ext][query]",
+    },
+   
 
     module: {
         rules: [
+            {
+                test: /\.(png|jpe?g|gif|svg)$/i,
+                // bundles all images into folder "asset/resource"
+                // asset inline's assets < 8kb into js, else in folder
+                type: "asset",
+                // used to customised asset size limit
+                // parser: {
+                //     dataUrlCondition: {
+                //         maxSize: 30 * 1024,
+                //     },
+                // },
+            },
+            {
+                test: /\.(s[ac]|c)ss$/i,
+                use: [
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: { publicPath: "" },
+                    },
+                    "css-loader",
+                    "postcss-loader", // order important - add vendor prefixes
+                    "sass-loader",
+                ],
+            },
             {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
                 use: {
                     loader: "babel-loader",
                 }
-            },
-            {
-                test: /\.(s[ac]|c)ss$/i,
-                use: [
-                    MiniCssExtractPlugin.loader,
-                    "css-loader",
-                    "postcss-loader", // order important - add vendor prefixes
-                    "sass-loader"],
             },
         ],
     },
