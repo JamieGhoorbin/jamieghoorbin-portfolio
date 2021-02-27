@@ -18,7 +18,9 @@ if (process.env.NODE_ENV === "production") {
     mode = "production";
      // Temporary workaround for 'browserslist' bug that is being patched in the near future
     target = "browserslist";
-} else {
+}; 
+
+if(process.env.SERVE) {
     plugins.push(new ReactRefreshWebpackPlugin());
 };
 
