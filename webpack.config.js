@@ -10,12 +10,11 @@ if (process.env.NODE_ENV === "production") {
 
 module.exports = {
     mode: mode,
-    target: target,
 
     module: {
         rules: [
             {
-                test: /\.js$/,
+                test: /\.jsx?$/,
                 exclude: /node_modules/,
                 use: {
                     loader: "babel-loader",
@@ -35,6 +34,13 @@ module.exports = {
     plugins: [ 
         new MiniCssExtractPlugin()
     ],
+
+    target: target,
+
+
+    resolve: {
+        extensions: [".js", ".jsx"],
+    },
 
     devtool: "source-map", // easier to read in debugger after combining and minified 
     devServer: {
