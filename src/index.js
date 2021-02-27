@@ -1,16 +1,5 @@
-import "./styles/index.scss";
+import { render } from "react-dom";
+import App from "./components/App";
 
-const testJamie = {
-    name: "Jamie",
-    location: "london",
-    abc: 1,
-};
+render(<App />, document.getElementById("root"));
 
-const two = {
-    ...testJamie,
-    location2: "Canterbury",
-    postcode: 2,
-}
-
-console.log(testJamie);
-console.log(two);
